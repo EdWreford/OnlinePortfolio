@@ -9,6 +9,12 @@ footer {
     color: #949494;
 }
 
+#mainTitle {
+    font-size: 100px;
+    font-weight: 500;
+    text-align: center;
+}
+
 h1 {
     color: #fff;
 }
