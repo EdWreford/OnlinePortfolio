@@ -1,6 +1,22 @@
 body {
-    background-color: #111;
-    font-family: 'Courier New', monospace;
+  margin: 0;
+  background-color: #111;
+  font-family: 'Courier New', monospace;
+  position: relative;
+  overflow-x: hidden;
+}
+
+html {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+canvas#background {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 footer {
