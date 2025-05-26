@@ -8,16 +8,20 @@
     <link rel="stylesheet" href="public/style/styles.css">
 </head>
 
+<!-- 
+IDEA: Have a dark background with some very blurred white pattern, that moves at a slower
+rate than the screen when scrolling
+-->
 
 <body>
+    <img class="leftPointer" src="public/images/leftSidePointer.png">
+    <img class="rightPointer" src="public/images/rightsidePointer.png">
     <div>
         <div class="centerColumn">
-            <h1 id="mainTitle">Portfolio</h1>
-<!-- 
-IDEA: Have the title either make the gap between each letter wider and wider as the user
-scrolls, or it splits down the middle as the user scrolls. Either way the letters disappear
-off the edge
--->
+            <section class="scroll-lock">
+                <h1 id="mainTitle">PORTFOLIO</h1>
+            </section>
+
             <div class="grid">
                 <div class="projectContainer">
                     <div class="projectContainerDetails">
@@ -60,11 +64,76 @@ off the edge
             </div>
         </div>
     </div>
+
+    <script>
+        const title = document.getElementById('mainTitle');
+        const leftPointer = document.querySelector('.leftPointer');
+        const rightPointer = document.querySelector('.rightPointer');
+
+        let pointersShown = false;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const triggerPoint = window.innerHeight * 1.5; // 150vh
+
+            const spacing = Math.min(scrollY / 10, 100);
+            title.style.letterSpacing = `${spacing}px`;
+
+            const fade = Math.max(1 - scrollY / 700, 0);
+            title.style.opacity = fade;
+
+            // Show pointers after 150vh scroll
+            if (scrollY >= triggerPoint && !pointersShown) {
+                leftPointer.classList.add('show-pointer');
+                rightPointer.classList.add('show-pointer');
+                pointersShown = true;
+            }
+
+            // Hide if user scrolls back up
+            if (scrollY < triggerPoint && pointersShown) {
+                leftPointer.classList.remove('show-pointer');
+                rightPointer.classList.remove('show-pointer');
+                pointersShown = false;
+            }
+        });
+    </script>
+
+
+
+    <script>
+        const containers = document.querySelectorAll('.projectContainer');
+
+        window.addEventListener('scroll', () => {
+            const centerY = window.innerHeight / 2;
+
+            containers.forEach(container => {
+                const rect = container.getBoundingClientRect();
+                const top = rect.top;
+                const bottom = rect.bottom;
+
+                if (top <= centerY && bottom >= centerY) {
+                    container.classList.remove('faded');
+                } else {
+                    container.classList.add('faded');
+                }
+            });
+        });
+
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+
+
 </body>
 
 
 <footer>
-    <p>&copy; 2025 Ed Wreford - Online Portfolio</p>
+    <div class="footer-content">
+        <div class="footer-icons">
+            <a href="https://github.com/EdWreford?tab=repositories"><img src="public/images/githubLogo.png" alt="GitHub logo"></a>
+            <a href=""><img src="public/images/linkedInLogo.png" alt="LinkedIn logo"></a>
+        </div>
+        <p>&copy; 2025 Ed Wreford - Online Portfolio</p>
+    </div>
 </footer>
 
 

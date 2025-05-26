@@ -5,33 +5,73 @@ body {
 
 footer {
     margin-left: 15%;
+    margin-right: 15%;
     padding: 100px 0 15px 0;
     color: #949494;
 }
 
+footer img {
+    max-height: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-icons a {
+    margin-right: 15px;
+}
+
+.leftPointer,
+.rightPointer {
+    position: fixed;
+    top: 45%;
+    max-width: 5%;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+.leftPointer {
+    left: 5%;
+    transform: translateX(-50px);
+}
+
+.rightPointer {
+    left: 90%;
+    transform: translateX(50px);
+}
+
+.show-pointer {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-lock {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
 #mainTitle {
-    font-size: 100px;
+    color: #fff;
+    font-size: 7em;
     font-weight: 500;
-    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0px;
+    opacity: 1;
+    transition: letter-spacing 0.1s, opacity 0.1s;
+    pointer-events: none;
 }
 
 h1 {
     color: #fff;
-}
-
-a {
-    text-decoration: none;
-    color: #fff;
-    background-color: #111;
-    padding: 20px;
-    border: 2px solid #fff;
-    border-radius: 10px;
-    transition: color 0.5s, background-color 0.5s;
-}
-
-a:hover {
-    color: #111;
-    background-color: #fff;
 }
 
 .centerColumn {
@@ -39,6 +79,7 @@ a:hover {
 }
 
 .grid {
+    margin-top: 100vh;
     column-gap: 30px;
     grid-row-gap: 200px;
     grid-template-columns: 1.75fr;
@@ -57,7 +98,15 @@ a:hover {
     display: flex;
     position: relative;
     overflow: hidden;
-    transition: box-shadow 0.5s;
+    transition: opacity 0.5s, box-shadow 0.5s;
+
+    background-color: #01010180;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* for Safari */
+}
+
+.faded {
+  opacity: 0.5;
 }
 
 .projectContainer:hover {
@@ -76,7 +125,6 @@ a:hover {
 .projectContainerDetails {
     max-width: 60%;
     color: #fff;
-    background-color: #111;
     display: flex;
     flex-direction: column;
 }
@@ -84,6 +132,18 @@ a:hover {
 .projectContainerDetails a {
     align-self: flex-start;
     margin-top: 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #111;
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+.projectContainerDetails a:hover {
+    color: #111;
+    background-color: #fff;
 }
 
 .categoryTitle {
