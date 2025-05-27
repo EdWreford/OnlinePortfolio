@@ -106,12 +106,14 @@ h1 {
     border: 2px solid #fff;
     border-radius: 15px;
     flex-flow: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     min-height: 40vh;
     max-height: 60vh;
     padding: 30px;
     display: flex;
+    flex-wrap: nowrap;
     position: relative;
     overflow: hidden;
     transition: opacity 0.5s, box-shadow 0.5s;

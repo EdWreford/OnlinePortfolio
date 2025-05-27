@@ -35,6 +35,9 @@ rate than the screen when scrolling
                             animi!
                         </p>
                         <a href="project1.html">Find out more:</a>
+                    </div>
+                    <div class="projectContainerImage">
+                        
                     </div> 
                 </div>
 
@@ -49,6 +52,9 @@ rate than the screen when scrolling
                         </p>
                         <a href="project2.html">Find out more:</a>
                     </div> 
+                    <div class="projectContainerImage">
+                        
+                    </div> 
                 </div>
 
                 <div class="projectContainer">
@@ -62,69 +68,18 @@ rate than the screen when scrolling
                         </p>
                         <a href="project3.html">Find out more:</a>
                     </div> 
+                    <div class="projectContainerImage">
+                        
+                    </div> 
                 </div>
             </div>
         </div>
     </div>
     
-    <script type="module" src="background.js"></script>
-
-    <script>
-        const title = document.getElementById('mainTitle');
-        const leftPointer = document.querySelector('.leftPointer');
-        const rightPointer = document.querySelector('.rightPointer');
-
-        let pointersShown = false;
-
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const triggerPoint = window.innerHeight * 1.5; // 150vh
-
-            const spacing = Math.min(scrollY / 10, 100);
-            title.style.letterSpacing = `${spacing}px`;
-
-            const fade = Math.max(1 - scrollY / 700, 0);
-            title.style.opacity = fade;
-
-            // Show pointers after 150vh scroll
-            if (scrollY >= triggerPoint && !pointersShown) {
-                leftPointer.classList.add('show-pointer');
-                rightPointer.classList.add('show-pointer');
-                pointersShown = true;
-            }
-
-            // Hide if user scrolls back up
-            if (scrollY < triggerPoint && pointersShown) {
-                leftPointer.classList.remove('show-pointer');
-                rightPointer.classList.remove('show-pointer');
-                pointersShown = false;
-            }
-        });
-    </script>
-
-
-
-    <script>
-        const containers = document.querySelectorAll('.projectContainer');
-
-        window.addEventListener('scroll', () => {
-            const centerY = window.innerHeight / 2;
-
-            containers.forEach(container => {
-                const rect = container.getBoundingClientRect();
-                const top = rect.top;
-                const bottom = rect.bottom;
-
-                if (top <= centerY && bottom >= centerY) {
-                    container.classList.remove('faded');
-                } else {
-                    container.classList.add('faded');
-                }
-            });
-        });
-
-        window.dispatchEvent(new Event('scroll'));
-    </script>
+    <script type="module" src="scripts/background.js"></script>
+    <script src="scripts/opening.js"></script>
+    <script src="scripts/faded.js"></script>
+    <script src="scripts/changeProjectImage.js"></script>
 
 
 </body>
