@@ -11,14 +11,6 @@ html {
     overflow-x: hidden;
 }
 
-canvas#background {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
 footer {
     margin-left: 15%;
     margin-right: 15%;
