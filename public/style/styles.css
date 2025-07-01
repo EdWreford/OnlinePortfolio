@@ -172,6 +172,11 @@ h1 {
     color: #fff;
     font-size: 5em;
     font-weight: 500;
+    margin: 0;
+}
+
+.projectTitles {
+    margin-bottom: 60px;
 }
 
 .backArrow {
