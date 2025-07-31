@@ -1,6 +1,6 @@
 This is my online portfolio website, it showcases recent projects I have done.
 
-This is the link for the live site: https://edwreford.github.io/website/ 
+This is the link for the live site: https://edwreford.github.io/OnlinePortfolio/ 
 It might not work, depending on whether the repository is private or not.
 
 Built using HTML, CSS & JavaScript
