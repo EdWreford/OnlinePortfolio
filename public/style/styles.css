@@ -9,9 +9,11 @@ body {
 html {
     margin: 0;
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     color: #fff;
 }
 
@@ -20,6 +22,10 @@ footer {
     margin-right: 15%;
     padding: 100px 0 15px 0;
     color: #949494;
+}
+
+footer p {
+    font-size: clamp(0.875rem, 2vw, 1.125rem);
 }
 
 footer img {
@@ -34,6 +40,7 @@ footer img {
 
 .footer-icons a {
     margin-right: 15px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
 }
 
 .leftPointer,
@@ -63,14 +70,18 @@ footer img {
 }
 
 .scroll-lock {
-    height: 100vh;
+    min-height: 60vh;
+    max-height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #mainTitle {
     color: #fff;
-    font-size: 7em;
+    font-size: clamp(2rem, 10vw, 7rem);
     font-weight: 500;
     position: fixed;
     top: 20%;
@@ -83,6 +94,7 @@ footer img {
 }
 
 h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
     color: #fff;
 }
 
@@ -105,8 +117,8 @@ h1 {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    min-height: 40vh;
-    max-height: 60vh;
+    /* min-height: 40vh;
+    max-height: 60vh; */
     padding: 30px;
     display: flex;
     flex-wrap: nowrap;
@@ -117,6 +129,8 @@ h1 {
     background-color: #01010180;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px); /* for Safari */
+
+    height: auto;
 }
 
 .faded {
@@ -129,6 +143,7 @@ h1 {
 
 .projectContainerDetails h1 {
     color: #fff;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     transition: color 0.5s;
 }
 
@@ -144,6 +159,7 @@ h1 {
 }
 
 .projectContainerDetails a {
+    font-size: clamp(0.9rem, 2vw, 1.125rem);
     align-self: flex-start;
     margin-top: 20px;
     text-decoration: none;
@@ -195,14 +211,14 @@ h1 {
 .categoryTitle {
     margin: 0 auto 0 0;
     color: #949494;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
     letter-spacing: 4px;
-    font-size: 20px;
     font-weight: normal;
 }
 
 .bigTitle {
     color: #fff;
-    font-size: 5em;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     font-weight: 500;
     margin: 0;
 }
@@ -220,4 +236,52 @@ h1 {
 
 .backArrow:hover {
   transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .centerColumn {
+        margin: 30px 5%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        grid-row-gap: 100px;
+    }
+
+    .projectContainer {
+        min-height: auto;
+        max-height: none;
+        padding: 20px;
+    }
+
+    .projectContainerDetails {
+        max-width: 100%;
+    }
+
+    .projectContainerImage img {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    #mainTitle {
+        font-size: 3em;
+        top: 15%;
+    }
+
+    footer {
+        margin: 0 5%;
+        padding: 50px 0 10px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-icons {
+        margin-bottom: 10px;
+    }
 }
