@@ -238,6 +238,24 @@ h1 {
   transform: translateX(-5px);
 }
 
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 40px auto;
+    align-items: center;
+}
+
+.content-grid p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.phoneImage {
+    width: 100%;
+}
+
 @media (max-width: 768px) {
     .centerColumn {
         margin: 30px 5%;
@@ -283,5 +301,9 @@ h1 {
 
     .footer-icons {
         margin-bottom: 10px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
     }
 }
