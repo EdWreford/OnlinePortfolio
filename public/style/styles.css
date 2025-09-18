@@ -252,6 +252,21 @@ h1 {
     line-height: 1.6;
 }
 
+.content-grid-vertical {
+    display: grid;
+    grid-template-columns: 1fr; /* one column only */
+    gap: 60px;                 /* extra breathing space */
+    max-width: 800px;          /* narrower for readability */
+    margin: 40px auto;
+    align-items: center;
+    text-align: center;        /* center images/text nicely */
+}
+
+.deviceImage {
+    max-width: 995px;
+    width: 100%;
+}
+
 .phoneImage {
     width: 100%;
 }

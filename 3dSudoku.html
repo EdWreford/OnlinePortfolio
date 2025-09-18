@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" author="Ed Wreford">
+    <link rel="icon" href="public/images/logo.png" type="image/png">
+    <title>Portfolio - 3D Sudoku</title>
+    <link rel="stylesheet" href="public/style/styles.css">
+</head>
+
+<body>
+
+    <a href="index.html"><img class="backArrow" src="public/images/rightsidePointer.png"></a>
+
+    <div>
+        <div class="centerColumn">
+            <div class="projectTitles">
+                <h1 id="bigTitle" class="bigTitle">3D Sudoku</h1>
+                <h5 id="categoryTitle" class="categoryTitle">Desktop App</h5>
+            </div>
+
+            <!-- GRID START -->
+            <div class="content-grid-vertical">
+                <div>
+                    <p>
+                    This project takes the familiar challenge of Sudoku into three dimensions. 
+                    Instead of a flat 9x9 board, puzzles are generated to make a cube, with numbers 
+                    required to be unique across rows, columns, and subcubes. The result is a 
+                    deeper and more complex logic puzzle, offering a new way to experience 
+                    Sudoku for enthusiasts looking for a twist. You can see some instructions and also
+                    a visual representation of what a 3D Sudoku does look like, by only being given multiple 
+                    2D Sudokus.
+                    </p>
+                </div>
+                <div>
+                    <img class="deviceImage" src="public/images/sudoku/homescreen-front.png" alt="Sudoku homescreen">
+                </div>
+
+                <div>
+                    <p>
+                    The application is built in Java using Swing for the interface. 
+                    The puzzle generator ensures valid solutions by filling the cube 
+                    with a backtracking algorithm, then selectively removing numbers 
+                    to create playable puzzles. It does this by removing one number, 
+                    then checking that the empty square only has one possible solution, 
+                    then if there are any other empty squares it does the same process. 
+                    If at some point there is no definitive solution, it will try to 
+                    remove another number. Difficulty levels control how many 
+                    cells are removed, balancing challenge with solvability.
+                    </p>
+                </div>
+
+                <div>
+                    <img class="deviceImage" src="public/images/sudoku/sudoku_gameplay-front.png" alt="Sudoku gameplay">
+                </div>
+
+                <div>
+                    <p>
+                    The visual interface presents the cube as multiple 2D slices, 
+                    allowing players to solve one layer at a time while still 
+                    respecting the global 3D rules. The homescreen helps show what 
+                    a 3D cube will look like when being represented by 2D Sudokus, 
+                    how they are orientated onto the cube. With support for both 4x4x4 
+                    and 9x9x9 grids, the app scales from beginner-friendly puzzles to highly 
+                    advanced challenges.
+                    </p>
+                </div>
+                <div>
+                    <img class="deviceImage" src="public/images/sudoku/complete_sudoku-front.png" alt="Complete sudoku screenshot">
+                </div>
+            </div>   
+        </div>
+    </div>
+
+    <script src="scripts/typeWriter.js"></script>
+
+</body>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-icons">
+            <a href="https://github.com/EdWreford?tab=repositories"><img src="public/images/githubLogo.png" alt="GitHub logo"></a>
+            <a href=""><img src="public/images/linkedInLogo.png" alt="LinkedIn logo"></a>
+        </div>
+        <p>&copy; 2025 Ed Wreford - Online Portfolio</p>
+    </div>
+</footer>
+
+</html>
