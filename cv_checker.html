@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" author="Ed Wreford">
+    <link rel="icon" href="public/images/logo.png" type="image/png">
+    <title>Portfolio - CV Checker</title>
+    <link rel="stylesheet" href="public/style/styles.css">
+</head>
+
+<body>
+
+    <a href="index.html"><img class="backArrow" src="public/images/rightsidePointer.png"></a>
+
+    <div>
+        <div class="centerColumn">
+            <div class="projectTitles">
+                <h1 id="bigTitle" class="bigTitle">CV Checker</h1>
+                <h5 id="categoryTitle" class="categoryTitle">Web-Based Application</h5>
+            </div>
+
+            <!-- GRID START -->
+            <div class="content-grid">
+                <div>
+                    <p>
+                        CV Checker is a web application I built to help users optimise their CVs with confidence. 
+                        It analyses uploaded or pasted CVs and compares them against a specific job description, 
+                        highlighting missing skills or keywords and giving a coverage score. Users receive clear, 
+                        actionable feedback so they can tailor their CVs to better match the roles they are applying for.
+                    </p>
+                </div>
+                <div>
+                    <img class="deviceImage" src="public/images/cvchecker/inputs-front.png" alt="CV Checker home screen">
+                </div>
+
+                <div>
+                    <img class="deviceImage" src="public/images/cvchecker/main_view-front.png" alt="CV analysis screen">
+                </div>
+                <div>
+                    <p>
+                        Built with Python and Flask on the backend, CV Checker uses <strong>spaCy</strong> for natural language 
+                        processing to extract meaningful keywords and perform conceptual matching. Users can upload PDFs 
+                        or DOCX files, and the application automatically extracts text using <strong>PyPDF2</strong> and 
+                        <strong>python-docx</strong>. The comparison includes conceptual synonyms to ensure that 
+                        relevant skills are recognised even if phrased differently.
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        The interface is clean and responsive, designed with HTML, CSS, and JavaScript for a smooth 
+                        experience across devices. The results include a visual coverage score, colour-coded feedback 
+                        for covered and missing keywords, and a side-by-side layout for CV and job description input. 
+                        Modular design and reusable components make the application maintainable and scalable for 
+                        future enhancements.
+                    </p>
+                </div>
+                <div>
+                    <img class="deviceImage" src="public/images/cvchecker/near_perfect-front.png" alt="CV near perfect example">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/typeWriter.js"></script>
+
+</body>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-icons">
+            <a href="https://github.com/EdWreford?tab=repositories"><img src="public/images/githubLogo.png" alt="GitHub logo"></a>
+            <a href=""><img src="public/images/linkedInLogo.png" alt="LinkedIn logo"></a>
+        </div>
+        <p>&copy; 2025 Ed Wreford - Online Portfolio</p>
+    </div>
+</footer>
+
+</html>
